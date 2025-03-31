@@ -55,5 +55,16 @@ public class Reparacion {
         this.idEmpleado = idEmpleado;
     }
 
+    @Override
+    public String toString() {
+        return "Reparacion{" +
+                "idReparacion=" + idReparacion +
+                ", descripcion='" + descripcion + '\'' +
+                ", precio=" + precio +
+                ", matriculaVehiculo='" + matriculaVehiculo + '\'' +                
+                ", idEmpleado=" + idEmpleado +
+                '}';
+    }
+
 
 }
