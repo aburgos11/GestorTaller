@@ -3,14 +3,14 @@ public class Reparacion {
     int idReparacion;
     String descripcion;
     double precio;
-    String matriculaVehiculo;
     int idEmpleado;
+    Vehiculo vehiculo;
 
     public Reparacion(int idReparacion, String descripcion, double precio, String matriculaVehiculo, int idEmpleado) {
         this.idReparacion = idReparacion;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.matriculaVehiculo = matriculaVehiculo;
+        this.vehiculo = vehiculo;
         this.idEmpleado = idEmpleado;
         
     }
@@ -39,12 +39,12 @@ public class Reparacion {
         this.precio = precio;
     }
 
-    public String getMatriculaVehiculo() {
-        return matriculaVehiculo;
+    public Vehiculo getVehiculo() {
+        return vehiculo;
     }
 
-    public void setMatriculaVehiculo(String matriculaVehiculo) {
-        this.matriculaVehiculo = matriculaVehiculo;
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
     }
 
     public int getIdEmpleado() {
@@ -61,7 +61,7 @@ public class Reparacion {
                 "idReparacion=" + idReparacion +
                 ", descripcion='" + descripcion + '\'' +
                 ", precio=" + precio +
-                ", matriculaVehiculo='" + matriculaVehiculo + '\'' +                
+                ", vehiculo=" + vehiculo +                
                 ", idEmpleado=" + idEmpleado +
                 '}';
     }
