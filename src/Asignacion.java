@@ -1,10 +1,10 @@
-public class Asignaciones {
+public class Asignacion {
 
     int idAsignacion;
     int idEmpleado;
     int idReparacion;
 
-    public Asignaciones (int idAsignacion, int idEmpleado, int idReparacion) {
+    public Asignacion (int idAsignacion, int idEmpleado, int idReparacion) {
         this.idAsignacion = idAsignacion;
         this.idEmpleado = idEmpleado;
         this.idReparacion = idReparacion;
