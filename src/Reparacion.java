@@ -6,7 +6,7 @@ public class Reparacion {
     int idEmpleado;
     Vehiculo vehiculo;
 
-    public Reparacion(int idReparacion, String descripcion, double precio, String matriculaVehiculo, int idEmpleado) {
+    public Reparacion(int idReparacion, String descripcion, double precio, Vehiculo vehiculo, int idEmpleado) {
         this.idReparacion = idReparacion;
         this.descripcion = descripcion;
         this.precio = precio;
