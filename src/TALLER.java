@@ -39,21 +39,41 @@ public class Taller {
                     scanner.nextLine();
 
                     switch (opcionClientes) {
-                        case 1:
-                        // Buscar cliente
+                        case 1: // Buscar cliente
+                        System.out.println("Introduce el ID del cliente que deseas buscar");
                         break;
 
-                        case 2:
-                        // Agregar cliente
+                        case 2: // Agregar cliente
+                        System.out.println("Introduce los datos del nuevo cliente:");
+
+                        System.out.println("Ingresa el ID");
+                        int idCliente = scanner.nextInt();
+                        scanner.nextLine();
+
+                        System.out.println("Ingresa el nombre");
+                        String nombreCliente = scanner.nextLine();
+                        scanner.nextLine();
+
+                        System.out.println("Ingresa el número de teléfono");
+                        String telefonoCliente = scanner.nextLine();
+                        scanner.nextLine();
+
+                        System.out.println("Ingresa el email");
+                        String emailCliente = scanner.nextLine();
+                        scanner.nextLine();
+                                            
                         break;
 
-                        case 3:
-                        // Modificar cliente
+
+                        case 3: // Modificar cliente
+                        
                         break;
 
-                        case 4:
-                        // Eliminar cliente
+
+                        case 4: // Eliminar cliente
+                       
                         break;
+
 
                         case 0: System.out.println("Volviendo al menú inicial");
                         break;
@@ -76,21 +96,42 @@ public class Taller {
                     scanner.nextLine();
 
                     switch (opcionVehiculos) {
-                        case 1:
-                        // Buscar vehículo
+                        case 1: // Buscar vehículo
+                        
                         break;
 
-                        case 2:
-                        // Agregar vehículo
+
+                        case 2: // Agregar vehículo
+                        System.out.println("Introduce los datos del nuevo vehículo");
+
+                        System.out.println("Introduce la matrícula");
+                        String matriculaVehiculo = scanner.nextLine();
+                        scanner.nextLine();
+
+                        System.out.println("Introduce la marca");
+                        String marcaVehiculo = scanner.nextLine();
+                        scanner.nextLine();
+
+                        System.out.println("Introduce el modelo");
+                        String modeloVehiculo = scanner.nextLine();
+                        scanner.nextLine();
+
+                        System.out.println("Introduce el ID del cliente al que pertenece el coche");
+                        int idClienteVehiculo = scanner.nextInt();
+                        scanner.nextLine();
+
                         break;
 
-                        case 3:
-                        // Modificar vehículo
+
+                        case 3: // Modificar vehículo
+                        
                         break;
 
-                        case 4:
-                        // Eliminar vehículo
+
+                        case 4: // Eliminar vehículo
+                        
                         break;
+
 
                         case 0: System.out.println("Volviendo al menú inicial");
                         break;
@@ -112,21 +153,52 @@ public class Taller {
                     scanner.nextLine();
 
                     switch (opcionEmpleados) {
-                        case 1:
-                        // Buscar empleado
-                        break;
-
-                        case 2:
-                        // Agregar empleado
-                        break;
-
-                        case 3:
-                        // Modificar empleado
-                        break;
+                        case 1: // Buscar empleado
                         
-                        case 4:
-                        // Eliminar empleado
                         break;
+
+
+                        case 2: // Agregar empleado
+                        System.out.println("Ingresa los datos del nuevo empleado");
+
+                        System.out.println("Ingresa el ID de empleado");
+                        int idEmpleado = scanner.nextInt();
+                        scanner.nextLine();
+
+                        System.out.println("Ingresa el nombre del empleado");
+                        String nombreEmpleado = scanner.nextLine();
+                        scanner.nextLine();
+
+                        System.out.println("¿Qué puesto va a ocupar el nuevo empleado?");
+                        System.out.println("Selecciona la opcion deseada");
+                        System.out.println("1. Mecánico");
+                        System.out.println("2. Administrativo");                        
+                        int opcionPuesto = scanner.nextInt();
+                        String puestoEmpleado;
+                        switch (opcionPuesto) {
+
+                            case 1:
+                            puestoEmpleado = "Mecanico";
+                            break;
+
+                            case 2:
+                            puestoEmpleado = "Administrativo";
+                            break;
+                        }
+                        scanner.nextLine();
+                        
+                        break;
+
+
+                        case 3: // Modificar empleado
+                        
+                        break;
+
+                        
+                        case 4: // Eliminar empleado
+                        
+                        break;
+
 
                         case 0: System.out.println("Volviendo al menú inicial");
                         break;
@@ -146,12 +218,12 @@ public class Taller {
                     scanner.nextLine();
 
                     switch (opcionReparaciones) {
-                        case 1:
-                        // Buscar reparación realizada
+                        case 1: // Buscar reparación realizada
+                        
                         break;
 
-                        case 2:
-                        // Registrar reparación
+                        case 2: // Registrar reparación
+                        
                         break;
 
                         case 0: System.out.println("Volviendo al menú inicial");
