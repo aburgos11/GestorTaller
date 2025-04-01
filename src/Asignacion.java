@@ -34,4 +34,13 @@ public class Asignacion {
         this.idReparacion = idReparacion;
     }
 
+    @Override
+    public String toString() {
+        return "Asignacion{" +
+            "idAsignacion=" + idAsignacion +
+            ", idEmpleado=" + idEmpleado +
+            ", idReparacion=" + idReparacion +
+            '}';
+    }
+
 }
