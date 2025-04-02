@@ -1,8 +1,9 @@
 package view;
 
 import dao.ClienteDAO;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import model.Cliente;
 
 public class ClienteVIEW {
     private Scanner sc = new Scanner(System.in);
@@ -51,6 +52,46 @@ public class ClienteVIEW {
     
     
         } while (opcionClientes != 0);
+
+    }
+
+    private void listarClientes() {
+        List<Cliente> lista = clienteDAO.obtenerTodos();
+        for (Cliente c : lista) {
+            System.out.println(c);
+        }
+    }
+
+    private void buscarCliente() {
+
+    }
+
+    private void agregarCliente() {
+        System.out.println("Introduce los datos del nuevo cliente:");
+
+        System.out.println("Ingresa el ID");
+        int idCliente = sc.nextInt();
+        sc.nextLine();
+
+        System.out.println("Ingresa el nombre");
+        String nombre = sc.nextLine();
+        sc.nextLine();
+
+        System.out.println("Ingresa el número de teléfono");
+        String telefono = sc.nextLine();
+        sc.nextLine();
+
+        System.out.println("Ingresa el email");
+        String email = sc.nextLine();
+        sc.nextLine();
+        ClienteDAO.insertar(new Cliente(0, nombre, telefono, email));
+    }
+
+    private void modificarCliente() {
+
+    }
+
+    private void eliminarCliente() {
 
     }
 }    
