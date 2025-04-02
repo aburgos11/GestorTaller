@@ -37,7 +37,7 @@ public class ClienteVIEW {
                 break;
     
                 case 4: // Modificar cliente
-                modificarCliente();       
+                actualizarCliente();       
                 break;
 
                 case 5: // Eliminar cliente
@@ -69,10 +69,6 @@ public class ClienteVIEW {
     private void agregarCliente() {
         System.out.println("Introduce los datos del nuevo cliente:");
 
-        System.out.println("Ingresa el ID");
-        int idCliente = sc.nextInt();
-        sc.nextLine();
-
         System.out.println("Ingresa el nombre");
         String nombre = sc.nextLine();
         sc.nextLine();
@@ -84,14 +80,16 @@ public class ClienteVIEW {
         System.out.println("Ingresa el email");
         String email = sc.nextLine();
         sc.nextLine();
-        ClienteDAO.insertar(new Cliente(0, nombre, telefono, email));
+        clienteDAO.insertar(new Cliente(0, nombre, telefono, email));
     }
 
-    private void modificarCliente() {
+    private void actualizarCliente() {
 
     }
 
     private void eliminarCliente() {
-
+        System.out.println("ID del cliente que deseas eliminar: ");
+        int id = sc.nextInt();
+        clienteDAO.eliminar(id);
     }
 }    
