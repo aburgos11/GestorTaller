@@ -51,7 +51,10 @@ public class ClienteDAO {
     }
     
     public Cliente buscarPorDni(String dni) {
-
+        Connection conexion = ConexionBD.conectar();
+        if (conexion != null) {
+            
+        }
     }
     
     public List<Cliente> obtenerTodos() {

@@ -64,7 +64,23 @@ public class ClienteVIEW {
     }
 
     private void buscarCliente() {
+        System.out.println("Introduce el DNI del cliente que deseas buscar:");
+        String dni = sc.nextLine();
 
+        try {
+            Cliente cliente = clienteDAO.buscarPorDni(dni);
+
+            if (cliente == null) {
+                System.out.println("No se encontró ningún cliente con el DNI proporcionado.");
+            } else {
+                System.out.println("Cliente encontrado:");
+                System.out.println(cliente);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error al buscar el cliente: " + e.getMessage());
+            
+        }
     }
 
     private void agregarCliente() {
