@@ -6,11 +6,11 @@ import java.util.Scanner;
 import model.Cliente;
 
 public class ClienteVIEW {
-    private Scanner sc = new Scanner(System.in);
+    
     private ClienteDAO clienteDAO = new ClienteDAO();
 
     public void menuClientes() {
-        Scanner scanner = new Scanner(System.in);
+        
         int opcionClientes;
         do {
             System.out.println("¿Qué acción deseas realizar?");
@@ -20,8 +20,8 @@ public class ClienteVIEW {
             System.out.println("4. Modificar cliente");
             System.out.println("5. Eliminar cliente");
             System.out.println("0. Volver al menú inicial");
-            opcionClientes = scanner.nextInt();
-            scanner.nextLine();
+            opcionClientes = sc.nextInt();
+           
     
             switch (opcionClientes) {
                 case 1: // Ver lista de clientes
@@ -54,6 +54,7 @@ public class ClienteVIEW {
         } while (opcionClientes != 0);
 
     }
+    Scanner sc = new Scanner(System.in);
 
     private void listarClientes() {
         List<Cliente> lista = clienteDAO.obtenerTodos();
