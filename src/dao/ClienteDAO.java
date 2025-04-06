@@ -22,7 +22,7 @@ public class ClienteDAO {
                 stmt.setString(2, cliente.getTelefono()); 
                 stmt.setString(3, cliente.getEmail()); 
                 stmt.executeUpdate(); 
-                System.out.println("Cliente agregado exitosamente.");
+                System.out.println("Cliente agregado correctamente.");
             } catch (SQLException e) {
                 System.out.println("Error al agregar cliente: " + e.getMessage());
             }
@@ -68,27 +68,26 @@ public class ClienteDAO {
     public Cliente buscarPorDni(String dni) {
         Connection conexion = ConexionBD.conectar();
         if (conexion != null) {
-            Cliente cliente = null;
             String query = "SELECT * FROM clientes WHERE dni = ?"; 
             try (PreparedStatement stmt = conexion.prepareStatement(query)) {
                 stmt.setString(1, dni);  
                 ResultSet rs = stmt.executeQuery();
                     if (rs.next()) {
-                        cliente = new Cliente(
+                        Cliente cliente = new Cliente(
                             rs.getString("dni"),
                             rs.getString("nombre"),
                             rs.getString("telefono"),
                             rs.getString("email")
                         );                        
                         return cliente;
-                    } else {
-                        return null; 
-                    }
-                
+                    } 
+                                                            
             } catch (SQLException e) {
                 System.out.println("Error al buscar cliente: " + e.getMessage());
+            }
+    
         }
-        return null; 
+        return null;
     }
 
     

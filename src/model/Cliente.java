@@ -66,14 +66,17 @@ public class Cliente {
         this.vehiculo = vehiculo;
     }
 
+
+
     @Override
     public String toString() {
         return "Cliente{" +
                 "id=" + id +
+                ", dni='" + dni + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", email='" + email + '\'' +
-                ", vehiculo=" + vehiculo +
+                ", vehiculo=" + vehiculo + '\'' +
                 '}';
     }
 

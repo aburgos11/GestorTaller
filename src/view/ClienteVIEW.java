@@ -1,7 +1,6 @@
 package view;
 
 import dao.ClienteDAO;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 import model.Cliente;
@@ -67,7 +66,6 @@ public class ClienteVIEW {
         System.out.println("Introduce el DNI del cliente que deseas buscar:");
         String dni = sc.nextLine();
 
-        try {
             Cliente cliente = clienteDAO.buscarPorDni(dni);
 
             if (cliente == null) {
@@ -77,10 +75,6 @@ public class ClienteVIEW {
                 System.out.println(cliente);
             }
 
-        } catch (SQLException e) {
-            System.out.println("Error al buscar el cliente: " + e.getMessage());
-            
-        }
     }
 
     private void agregarCliente() {
@@ -99,46 +93,34 @@ public class ClienteVIEW {
 
         Cliente nuevoCliente = new Cliente(dni, nombre, telefono, email);
 
-       try {
-            clienteDAO.insertar(nuevoCliente);
-            System.out.println("Cliente agregado correctamente.");
-        } catch (SQLException e) {
-            System.out.println("Error al agregar el cliente: " + e.getMessage());
-            
-        }
+        clienteDAO.insertar(nuevoCliente);
 
     }
 
     private void actualizarCliente() {
         System.out.println("Introduce el DNI del cliente que deseas actualizar:");
         String dni = sc.nextLine();
-        try {
-            Cliente cliente = clienteDAO.buscarPorDni(dni);
+        Cliente cliente = clienteDAO.buscarPorDni(dni);
             if (cliente == null) {
                 System.out.println("No se encontró ningún cliente con el DNI proporcionado.");
                 return;
+            } else {
+                System.out.println("Introduce los nuevos datos del cliente:");
+
+                System.out.println("Ingresa el nuevo número de teléfono (deja en blanco para mantener el actual):");
+                String telefono = sc.nextLine();
+                if (!telefono.isEmpty()) {
+                    cliente.setTelefono(telefono);
+                }
+    
+                System.out.println("Ingresa el nuevo email (deja en blanco para mantener el actual):");
+                String email = sc.nextLine();
+                if (!email.isEmpty()) {
+                    cliente.setEmail(email);
+                }
+    
+                clienteDAO.actualizar(cliente);
             }
-            System.out.println("Introduce los nuevos datos del cliente:");
-
-            System.out.println("Ingresa el nuevo número de teléfono (deja en blanco para mantener el actual):");
-            String telefono = sc.nextLine();
-            if (!telefono.isEmpty()) {
-                cliente.setTelefono(telefono);
-            }
-
-            System.out.println("Ingresa el nuevo email (deja en blanco para mantener el actual):");
-            String email = sc.nextLine();
-            if (!email.isEmpty()) {
-                cliente.setEmail(email);
-            }
-
-            clienteDAO.actualizar(cliente);
-            System.out.println("Cliente actualizado correctamente.");
-
-        } catch (SQLException e) {
-            System.out.println("Error al actualizar el cliente: " + e.getMessage());
-            
-        }
     }
 
     private void eliminarCliente() {

@@ -1,3 +1,9 @@
+/* 
+    ---------------------------------------------
+   | LO GUARDO PARA COPIAR ALGUNAS COSAS DE AQUÍ |
+    ---------------------------------------------
+
+
 package model;
 
 import java.util.ArrayList;
@@ -265,3 +271,5 @@ public class Taller {
     }
 
 }
+
+*/
