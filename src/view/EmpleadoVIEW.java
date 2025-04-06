@@ -3,8 +3,6 @@ package view;
 import dao.EmpleadoDAO;
 import java.util.List;
 import java.util.Scanner;
-
-import model.Cliente;
 import model.Empleado;
 
 
@@ -33,7 +31,7 @@ public class EmpleadoVIEW {
                 buscarEmpleado();                                     
                 break;
      
-                case 3: // Agregar emppleados
+                case 3: // Agregar empleados
                 agregarEmpleado();
                 break;
 
@@ -86,7 +84,8 @@ public class EmpleadoVIEW {
         System.out.println("1. Taller");
         System.out.println("2. Administrativo");     
         int opcionPuesto = sc.nextInt();
-        String puesto;
+        String puesto = sc.nextLine();
+        //String puestoTrabajo;
         switch (opcionPuesto) {
             case 1: 
             puesto = "Taller";
@@ -97,8 +96,6 @@ public class EmpleadoVIEW {
             break;
         }
 
-
-
         Empleado nuevoEmpleado = new Empleado(dniEmpleado, nombre, puesto);
 
         empleadoDAO.insertar(nuevoEmpleado);
@@ -107,7 +104,9 @@ public class EmpleadoVIEW {
 
 
     private void eliminarEmpleado() {
-        
+        System.out.println("DNI del empleado que deseas eliminar: ");
+        String dniEmpleado = sc.nextLine();
+        empleadoDAO.eliminar(dniEmpleado);
     }
 
 }

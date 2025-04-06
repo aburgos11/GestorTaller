@@ -7,10 +7,11 @@ public class Empleado {
     String nombre;
     String puesto; // Cual es su especialidad, el trabajo que realiza (Mecánico, Administrativo...) 
     
-    public Empleado(int idEmpleado, String dniEmpleado, String nombre, String puesto) {
-        this.idEmpleado = idEmpleado;
+    public Empleado(String dniEmpleado, String nombre, String puesto) {
+       
         this.nombre = nombre;
         this.puesto = puesto;
+        this.dniEmpleado = dniEmpleado;
     }
 
     public int getIdEmpleado() {
