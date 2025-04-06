@@ -3,10 +3,11 @@ package model;
 public class Empleado {
 
     int idEmpleado;
+    String dniEmpleado;
     String nombre;
     String puesto; // Cual es su especialidad, el trabajo que realiza (Mecánico, Administrativo...) 
     
-    public Empleado(int idEmpleado, String nombre, String puesto) {
+    public Empleado(int idEmpleado, String dniEmpleado, String nombre, String puesto) {
         this.idEmpleado = idEmpleado;
         this.nombre = nombre;
         this.puesto = puesto;
@@ -18,6 +19,14 @@ public class Empleado {
 
     public void setIdEmpleado(int idEmpleado) {
         this.idEmpleado = idEmpleado;
+    }
+
+    public String getDniEmpleado() {
+        return dniEmpleado;
+    }
+
+    public void setDniEmpleado(String dniEmpleado) {
+        this.dniEmpleado = dniEmpleado;
     }
 
     public String getNombre() {
@@ -41,6 +50,7 @@ public class Empleado {
     public String toString() {
         return "Empleado{" +
             "idEmpleado=" + idEmpleado +
+            "dniEmpleado=" + dniEmpleado + '\'' +
             ", nombre='" + nombre + '\'' +
             ", puesto='" + puesto + '\'' +
             '}';
