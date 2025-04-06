@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
 import model.Cliente;
 import model.ConexionBD;
 
@@ -58,7 +57,7 @@ public class ClienteDAO {
                 stmt.executeUpdate(); 
                 System.out.println("Cliente eliminado.");
             } catch (SQLException e) {
-                System.out.println("Error al eliminar cliente: " + 
+                System.out.println("Error al eliminar el cliente: " + 
                 e.getMessage());
             }
         }
@@ -106,6 +105,7 @@ public class ClienteDAO {
                     cliente.setNombre(rs.getString("nombre"));
                     cliente.setTelefono(rs.getString("telefono"));
                     cliente.setEmail(rs.getString("email"));
+                    cliente.setDni(rs.getString("dni"));
                     clientes.add(cliente);
                     
                 }

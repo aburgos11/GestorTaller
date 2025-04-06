@@ -48,7 +48,7 @@ public class EmpleadoVIEW {
     }
     Scanner sc = new Scanner(System.in);
 
-    private void listarEmpleados() {
+    private  void listarEmpleados() {
         List<Empleado> lista = empleadoDAO.obtenerTodos();
         for (Empleado c : lista) {
             System.out.println(c);
