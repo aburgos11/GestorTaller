@@ -5,13 +5,13 @@ public class Vehiculo {
     String matricula;
     String marca;
     String modelo;
-    int idCliente;
+    int idCliente;  // ES SOLO UNA PEQUEÑA IDEA PARA ASOCIAR VEHICULOS CON SUS DUEÑOS, PERO ME DA QUE SERÁ MEJOR USAR DNI
 
-    public Vehiculo(String matricula, String marca, String modelo, int idCliente) {
+    public Vehiculo(String matricula, String marca, String modelo /*int idCliente*/) {
         this.matricula = matricula;
         this.marca = marca;
         this.modelo = modelo;
-        this.idCliente = idCliente;
+        //this.idCliente = idCliente;
     }
 
     public int getIdCliente() {
