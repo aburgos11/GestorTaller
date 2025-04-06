@@ -120,12 +120,6 @@ public class ClienteVIEW {
             }
             System.out.println("Introduce los nuevos datos del cliente:");
 
-            System.out.println("Ingresa el nuevo nombre (deja en blanco para mantener el actual):");
-            String nombre = sc.nextLine();
-            if (!nombre.isEmpty()) {
-                cliente.setNombre(nombre);
-            }
-
             System.out.println("Ingresa el nuevo número de teléfono (deja en blanco para mantener el actual):");
             String telefono = sc.nextLine();
             if (!telefono.isEmpty()) {
